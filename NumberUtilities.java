@@ -70,15 +70,20 @@ public class NumberUtilities {
 
 
     public static String getExponentiations(int start, int stop, int exponent) {
-        String expStartStop = "";
-        
-        for (int i = start; i <= stop; i++){
+        /* revised after this comment
+         * for (int i = start; i <= stop; i++){
             int expMachine = i;
             for (int j = 1; j < exponent ; j++){
                 expMachine *= i;
             }
             expStartStop += expMachine;
             
+        }
+        return expStartStop;
+         */
+        String expStartStop = "";
+        for (int i = start; i <= stop; i++){
+            expStartStop += (int)Math.pow(i, exponent);
         }
         return expStartStop;
     }
